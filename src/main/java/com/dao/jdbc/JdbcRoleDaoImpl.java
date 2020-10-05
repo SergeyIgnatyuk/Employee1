@@ -33,7 +33,7 @@ public class JdbcRoleDaoImpl implements RoleDao {
 
     @Override
     public Role getOne(Long id) {
-        String sql = "SELECT id, name FROM roles WHERE id := id";
+        String sql = "SELECT role_id, name FROM roles WHERE role_id := id";
         Map<String, Object> params = new HashMap<>();
         params.put("id", id);
         return namedParameterJdbcTemplate.queryForObject(sql, params, rowMapper());
