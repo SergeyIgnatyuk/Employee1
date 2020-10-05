@@ -30,8 +30,7 @@ public class JdbcUserDaoImpl implements UserDao {
                 User user = null;
                 while (rs.next()) {
                     user = new User();
-                    Long id = rs.getLong("user_id");
-                    user.setId(id);
+                    user.setId(rs.getLong("user_id"));
                     user.setUsername(rs.getString("username"));
                     user.setPassword(rs.getString("password"));
                     user.setRoles(new HashSet<>());
@@ -67,6 +66,6 @@ public class JdbcUserDaoImpl implements UserDao {
         Map<String, Object> params = new HashMap<>();
         params.put("username", username);
 
-        return (User) namedParameterJdbcTemplate.query(sql, params, resultSetExtractor());
+        return namedParameterJdbcTemplate.query(sql, params, resultSetExtractor());
     }
 }

@@ -5,6 +5,9 @@
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
     <http auto-config="true">
         <intercept-url pattern="/" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
+        <form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?error"
+                    username-parameter="username" password-parameter="password"/>
+        <logout logout-success-url="/login?logout"/>
     </http>
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailsService">
