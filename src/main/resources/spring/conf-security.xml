@@ -6,11 +6,8 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
     </http>
-    <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="admin" authorities="ROLE_ADMIN" password="$2a$11$uSXS6rLJ91WjgOHhEGDx..VGs7MkKZV68Lv5r1uwFu7HgtRn3dcXG"/>
-            </user-service>
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailsService">
             <password-encoder ref="encoder"/>
         </authentication-provider>
     </authentication-manager>
@@ -19,4 +16,6 @@
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
         <beans:constructor-arg name="strength" value="11"/>
     </beans:bean>
+
+    <beans:bean id="userDetailsService" class="com.service.UserDetailsServiceImpl"/>
 </beans:beans>

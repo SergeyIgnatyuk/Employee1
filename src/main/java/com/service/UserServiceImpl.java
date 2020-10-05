@@ -14,16 +14,17 @@ import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
+    @Qualifier("jdbcUserDaoImpl")
+    @Autowired
     private UserDao userDao;
+
+    @Qualifier("jdbcRoleDaoImpl")
+    @Autowired
     private RoleDao roleDao;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserServiceImpl(@Qualifier("jdbcUserDaoImpl") UserDao userDao, @Qualifier("jdbcRoleDaoImpl") RoleDao roleDao, BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.userDao = userDao;
-        this.roleDao = roleDao;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    }
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 
     @Override
     public void save(User user) {

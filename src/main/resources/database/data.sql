@@ -1,23 +1,25 @@
 -- Table: users
 CREATE TABLE users (
-    id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS identity,
+    user_id INT GENERATED ALWAYS AS identity PRIMARY KEY,
     username TEXT NOT NULL,
     password TEXT NOT NULL
 );
 
 -- Table: roles
 CREATE TABLE roles (
-    id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS identity,
+    role_id INT GENERATED ALWAYS AS identity PRIMARY KEY,
     name TEXT NOT NULL
 );
 
 -- Table for mapping user and roles: user_roles
 CREATE TABLE user_roles (
-    user_id INT NOT NULL UNIQUE,
-    role_id INT NOT NULL UNIQUE,
+    user_id INT NOT NULL,
+    role_id INT NOT NULL,
 
-    FOREIGN KEY (user_id) REFERENCES users (id),
-    FOREIGN KEY (role_id) REFERENCES roles (id)
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (role_id) REFERENCES roles (role_id),
+
+    UNIQUE (user_id, role_id)
 );
 
 -- Insert data
