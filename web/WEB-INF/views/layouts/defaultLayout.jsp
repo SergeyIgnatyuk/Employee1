@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <tiles:insertAttribute name="header"/>
     </header>
-    <main>
+    <main class="content">
         <tiles:insertAttribute name="main"/>
     </main>
     <footer>
