@@ -47,11 +47,19 @@ public class JdbcUserDaoImpl implements UserDao {
 
     @Override
     public User save(User user) {
-        String sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        String sql1 = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        String sql2 = "INSERT INTO user_roles VALUES ((SELECT user_id FROM users WHERE username = :username), " +
+                "(SELECT role_id FROM roles WHERE name = :role))";
+
         Map<String, Object> params = new HashMap<>();
         params.put("username", user.getUsername());
         params.put("password", user.getPassword());
-        namedParameterJdbcTemplate.update(sql, params);
+        namedParameterJdbcTemplate.update(sql1, params);
+        Set<Role> roles = user.getRoles();
+        for (Role role : roles) {
+            params.put("role", role);
+            namedParameterJdbcTemplate.update(sql2, params);
+        }
         return user;
     }
 
