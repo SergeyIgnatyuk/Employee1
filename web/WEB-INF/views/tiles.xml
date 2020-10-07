@@ -17,4 +17,6 @@
     </definition>
     <!--Login-->
     <definition name="login" template="/WEB-INF/views/pages/login.jsp"/>
+    <!--Registration-->
+    <definition name="registration" template="/WEB-INF/views/pages/registration.jsp"/>
 </tiles-definitions>
