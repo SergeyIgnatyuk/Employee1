@@ -23,7 +23,7 @@ public class JdbcRoleDaoImpl implements RoleDao {
     private RowMapper<Role> rowMapper() {
         return (rs, i) -> {
             Role role = new Role();
-            role.setId(rs.getLong("id"));
+            role.setId(rs.getLong("role_id"));
             role.setName(rs.getString("name"));
             return role;
         };

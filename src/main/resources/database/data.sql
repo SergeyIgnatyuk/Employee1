@@ -1,14 +1,15 @@
+DROP TABLE if exists user_roles, users, roles;
 -- Table: users
 CREATE TABLE users (
     user_id INT GENERATED ALWAYS AS identity PRIMARY KEY,
-    username TEXT NOT NULL,
+    username TEXT NOT NULL UNIQUE ,
     password TEXT NOT NULL
 );
 
 -- Table: roles
 CREATE TABLE roles (
     role_id INT GENERATED ALWAYS AS identity PRIMARY KEY,
-    name TEXT NOT NULL
+    name TEXT NOT NULL UNIQUE
 );
 
 -- Table for mapping user and roles: user_roles

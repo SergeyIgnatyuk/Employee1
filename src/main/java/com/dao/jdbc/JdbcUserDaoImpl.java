@@ -6,6 +6,7 @@ import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -45,6 +46,25 @@ public class JdbcUserDaoImpl implements UserDao {
         };
     }
 
+    private RowMapper<User> rowMapper() {
+        return new RowMapper<User>() {
+            @Override
+            public User mapRow(ResultSet rs, int i) throws SQLException {
+                User user = new User();
+                user.setId(rs.getLong("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                Set<Role> roles = new HashSet<>();
+                Role role = new Role();
+                role.setId(rs.getLong("role_id"));
+                role.setName(rs.getString("name"));
+                roles.add(role);
+                user.setRoles(roles);
+                return user;
+            }
+        };
+    }
+
     @Override
     public User save(User user) {
         String sql1 = "INSERT INTO users (username, password) VALUES (:username, :password)";
@@ -57,7 +77,7 @@ public class JdbcUserDaoImpl implements UserDao {
         namedParameterJdbcTemplate.update(sql1, params);
         Set<Role> roles = user.getRoles();
         for (Role role : roles) {
-            params.put("role", role);
+            params.put("role", role.getName());
             namedParameterJdbcTemplate.update(sql2, params);
         }
         return user;
@@ -75,5 +95,15 @@ public class JdbcUserDaoImpl implements UserDao {
         params.put("username", username);
 
         return namedParameterJdbcTemplate.query(sql, params, resultSetExtractor());
+    }
+
+    @Override
+    public List<User> findAll() {
+        String sql = "SELECT u.user_id, u.username, u.password, r.role_id, r.name " +
+                "FROM users u " +
+                "LEFT JOIN user_roles ur ON ur.user_id = u.user_id " +
+                "LEFT JOIN roles r ON r.role_id = ur.role_id";
+
+        return namedParameterJdbcTemplate.query(sql, rowMapper());
     }
 }

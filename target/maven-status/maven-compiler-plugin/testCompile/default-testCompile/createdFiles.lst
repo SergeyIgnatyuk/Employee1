@@ -1,2 +1,6 @@
-com\controller\WelcomeControllerTest$WelcomeControllerTestConfiguration.class
-com\controller\WelcomeControllerTest.class
+com\dao\jdbc\JdbcUserDaoImplTest$JdbcUserDaoImplTestConfig.class
+com\dao\jdbc\JdbcUserDaoImplTest.class
+com\dao\jdbc\JdbcRoleDaoImplTest$JdbcRoleDaoImplTestConfig.class
+com\dao\jdbc\JdbcRoleDaoImplTest.class
+com\service\UserServiceImplTest.class
+com\service\UserServiceImplTest$UserServiceImplTestConfig.class

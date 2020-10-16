@@ -5,28 +5,27 @@ import com.dao.UserDao;
 import com.model.Role;
 import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Qualifier("jdbcUserDaoImpl")
     @Autowired
     private UserDao userDao;
 
-    @Qualifier("jdbcRoleDaoImpl")
     @Autowired
     private RoleDao roleDao;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-
     @Override
+    @Transactional
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         Set<Role> roles = new HashSet<>();
@@ -36,7 +35,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> findAll() {
+        return userDao.findAll();
     }
 }

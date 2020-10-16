@@ -3,6 +3,7 @@ com\service\SecurityServiceImpl.class
 com\model\Role.class
 com\controller\UserController.class
 com\dao\hibernate\HibernateUserDaoImpl.class
+com\dao\jdbc\JdbcUserDaoImpl$2.class
 com\util\UserValidator.class
 com\service\UserService.class
 com\controller\WelcomeController.class

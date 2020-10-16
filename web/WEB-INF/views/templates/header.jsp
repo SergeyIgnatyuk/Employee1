@@ -8,10 +8,10 @@
 </div>
 <nav>
     <ul class="main-menu">
-        <li><a href="#home">Home</a></li>
+        <li><a href="/WebApp/">Home</a></li>
         <li><a href="#employees">Employees</a></li>
         <li><a href="#departments">Departments</a></li>
-        <li><a href="#users">Users</a></li>
+        <li><a href="/WebApp/users">Users</a></li>
         <li><a href="#contacts">Contacts</a></li>
     </ul>
 </nav>

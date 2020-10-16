@@ -3,6 +3,7 @@ package com.controller;
 import com.model.User;
 import com.service.SecurityService;
 import com.service.UserService;
+import com.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private SecurityService securityService;
+    @Autowired
+    private UserValidator userValidator;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -39,9 +42,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registration(ModelMap modelMap, @ModelAttribute("userForm") User userForm) {
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult result) {
+        userValidator.validate(userForm, result);
+        if (result.hasErrors()) {
+            return "registration";
+        }
         userService.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public String findAll(ModelMap modelMap) {
+        modelMap.addAttribute("users", userService.findAll());
+        return "users";
     }
 }

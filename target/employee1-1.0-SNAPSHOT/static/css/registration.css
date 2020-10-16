@@ -1,9 +1,13 @@
 body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 900px;
     font-family: "Century Gothic", serif;
     color: #0f1e7c;
 }
@@ -41,6 +45,6 @@ input:not(:last-child):focus {
     color: #0f1e7c;
     margin: 0 20px;
 }
-.has-error span {
+.has-error {
     color: darkred;
 }
