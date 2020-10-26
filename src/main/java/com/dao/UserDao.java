@@ -5,8 +5,10 @@ import com.model.User;
 import java.util.List;
 
 public interface UserDao {
-    User save(User user);
-    User findByUsername(String username);
     List<User> findAll();
+    User findByUsername(String username);
+    User save(User user);
+    User editUserByUsername(String username, String newUsername, String roleName, String password);
+    void deleteUserByUsername(String username);
 }
 

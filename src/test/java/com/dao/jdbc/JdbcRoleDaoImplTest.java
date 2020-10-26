@@ -48,7 +48,6 @@ public class JdbcRoleDaoImplTest {
     @Rollback
     public void getOneTest() {
         Role role = roleDao.getOne(1L);
-
         Assert.assertEquals(1, role.getId().intValue());
         Assert.assertEquals("ROLE_ADMIN", role.getName());
     }

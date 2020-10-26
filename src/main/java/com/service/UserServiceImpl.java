@@ -24,6 +24,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> findAll() {
+        return userDao.findAll();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public User findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
+
     @Override
     @Transactional
     public void save(User user) {
@@ -35,14 +48,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public User findByUsername(String username) {
-        return userDao.findByUsername(username);
+    @Transactional
+    public User editUserByUsername(String username, String newUsername, String roleName, String password) {
+        return null;
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<User> findAll() {
-        return userDao.findAll();
+    @Transactional
+    public void deleteUserByUsername(String username) {
+        userDao.deleteUserByUsername(username);
     }
 }

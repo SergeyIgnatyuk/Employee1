@@ -106,4 +106,20 @@ public class JdbcUserDaoImpl implements UserDao {
 
         return namedParameterJdbcTemplate.query(sql, rowMapper());
     }
+
+    @Override
+    public User editUserByUsername(String username, String newUsername, String roleName, String password) {
+        return null;
+    }
+
+    @Override
+    public void deleteUserByUsername(String username) {
+        String sql1 = "DELETE FROM user_roles WHERE user_id = (SELECT user_id FROM users " +
+                "WHERE username = :username)";
+        String sql2 = "DELETE FROM users WHERE username = :username";
+        Map<String, Object> params = new HashMap<>();
+        params.put("username", username);
+        namedParameterJdbcTemplate.update(sql1, params);
+        namedParameterJdbcTemplate.update(sql2, params);
+    }
 }

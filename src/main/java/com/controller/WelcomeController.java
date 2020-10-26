@@ -11,4 +11,9 @@ public class WelcomeController {
     public String welcome(ModelMap modelMap) {
         return "welcome";
     }
+
+    @RequestMapping(value = "/contacts", method = RequestMethod.GET)
+    public String contacts(ModelMap modelMap) {
+        return "contacts";
+    }
 }

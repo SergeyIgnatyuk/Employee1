@@ -15,6 +15,11 @@
         <put-attribute name="title" value="welcome"/>
         <put-attribute name="main" value="/WEB-INF/views/pages/welcome.jsp"/>
     </definition>
+    <!--Contacts-->
+    <definition name="contacts" extends="base-definition">
+        <put-attribute name="title" value="contacts"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/contacts.jsp"/>
+    </definition>
     <!--Login-->
     <definition name="login" template="/WEB-INF/views/pages/login.jsp"/>
     <!--Registration-->
@@ -23,5 +28,10 @@
     <definition name="users" extends="base-definition">
         <put-attribute name="title" value="users"/>
         <put-attribute name="main" value="/WEB-INF/views/pages/users.jsp"/>
+    </definition>
+    <!--Edit User-->
+    <definition name="editUser" extends="base-definition">
+        <put-attribute name="title" value="edit user"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/editUser.jsp"/>
     </definition>
 </tiles-definitions>

@@ -43,7 +43,7 @@ body {
 }
 
 .main-menu a:hover {
-    background-color: #eeeeee;
+    color: #41835d;
 }
 
 .logout {
@@ -55,10 +55,34 @@ body {
     cursor: pointer;
 }
 
+.logout a:hover {
+    color: #41835d;
+}
+
 .content {
+    margin: 0 auto;
     text-align: center;
     line-height: 18px;
     font-family: "Century Gothic", serif;
+    color: #41835d;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: center;
+    border-bottom: 1px solid #41835d;
+    padding: 20px;
+    color: #0f1e7c;
+}
+
+.edit, .delete {
+    cursor: pointer;
+}
+
+.edit:hover, .delete:hover {
     color: #41835d;
 }
 
@@ -67,4 +91,8 @@ footer {
     line-height: 18px;
     font-family: "Century Gothic", serif;
     color: #0f1e7c;
+}
+
+.logoutForm, .editForm, .deleteForm {
+    display: none;
 }
