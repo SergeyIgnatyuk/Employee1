@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Repository
 public class JdbcEmployeeDaoImpl implements EmployeeDao {
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
     public JdbcEmployeeDaoImpl(DataSource dataSource) {

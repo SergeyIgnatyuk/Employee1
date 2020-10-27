@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Repository
 public class JdbcRoleDaoImpl implements RoleDao {
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
     public JdbcRoleDaoImpl(DataSource dataSource) {

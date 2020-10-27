@@ -17,7 +17,7 @@ import java.util.*;
 
 @Repository
 public class JdbcUserDaoImpl implements UserDao {
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
     public JdbcUserDaoImpl(DataSource dataSource) {
