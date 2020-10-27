@@ -103,24 +103,4 @@ public class JdbcUserDaoImplTest {
             Assert.assertEquals("ROLE_ADMIN", role.getName());
         }
     }
-
-    @Test
-    public void deleteUserByUsernameTest() {
-        User user = new User();
-        user.setUsername("testUser");
-        user.setPassword("123");
-        Role role = new Role();
-        role.setName("ROLE_USER");
-        Set<Role> roles = new HashSet<>();
-        roles.add(role);
-        user.setRoles(roles);
-
-        userDao.save(user);
-
-        List<User> users = userDao.findAll();
-        Assert.assertEquals(2, users.size());
-        userDao.deleteUserByUsername(user.getUsername());
-        users = userDao.findAll();
-        Assert.assertEquals(1, users.size());
-    }
 }

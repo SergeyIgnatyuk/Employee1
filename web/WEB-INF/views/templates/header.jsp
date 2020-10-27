@@ -11,7 +11,6 @@
     <ul class="main-menu">
         <li><a href="/WebApp/">Home</a></li>
         <li><a href="#employees">Employees</a></li>
-        <li><a href="#departments">Departments</a></li>
         <security:authorize access="hasRole('ROLE_ADMIN')">
             <li><a href="/WebApp/users">Users</a></li>
         </security:authorize>

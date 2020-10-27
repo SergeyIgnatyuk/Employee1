@@ -46,16 +46,4 @@ public class UserServiceImpl implements UserService {
         user.setRoles(roles);
         userDao.save(user);
     }
-
-    @Override
-    @Transactional
-    public User editUserByUsername(String username, String newUsername, String roleName, String password) {
-        return null;
-    }
-
-    @Override
-    @Transactional
-    public void deleteUserByUsername(String username) {
-        userDao.deleteUserByUsername(username);
-    }
 }

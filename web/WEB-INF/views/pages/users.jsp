@@ -16,16 +16,6 @@
                 <td>
                     <c:out value="${role.name}"/>
                 </td>
-                <td>
-                    <c:if test="${role.name.equals('ROLE_ADMIN')}">
-                        <form id="editForm" action="/WebApp/users/${user.username}/edit" method="GET"></form>
-                        <a class="edit" onclick="document.forms['editForm'].submit()">edit</a>
-                    </c:if>
-                    <c:if test="${!role.name.equals('ROLE_ADMIN')}">
-                        <form id="deleteForm" action="/WebApp/users/${user.username}/delete" method="POST"></form>
-                        <a class="delete" onclick="document.forms['deleteForm'].submit()">delete</a>
-                    </c:if>
-                </td>
             </c:forEach>
         </tr>
     </c:forEach>

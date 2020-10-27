@@ -15,6 +15,7 @@
             </list>
         </property>
     </bean>
+
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basenames">
             <list>

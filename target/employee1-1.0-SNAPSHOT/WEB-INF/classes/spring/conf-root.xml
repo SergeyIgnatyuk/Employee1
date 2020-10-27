@@ -8,5 +8,4 @@
     <import resource="conf-data.xml"/>
     <import resource="conf-web.xml"/>
     <import resource="conf-security.xml"/>
-    <import resource="conf-tools.xml"/>
 </beans>

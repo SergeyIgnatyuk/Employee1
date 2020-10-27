@@ -29,9 +29,4 @@
         <put-attribute name="title" value="users"/>
         <put-attribute name="main" value="/WEB-INF/views/pages/users.jsp"/>
     </definition>
-    <!--Edit User-->
-    <definition name="editUser" extends="base-definition">
-        <put-attribute name="title" value="edit user"/>
-        <put-attribute name="main" value="/WEB-INF/views/pages/editUser.jsp"/>
-    </definition>
 </tiles-definitions>

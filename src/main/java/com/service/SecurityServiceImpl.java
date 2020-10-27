@@ -40,8 +40,4 @@ public class SecurityServiceImpl implements SecurityService {
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         }
     }
-
-    public void update(String username) {
-
-    }
 }

@@ -58,16 +58,4 @@ public class UserController {
         modelMap.addAttribute("users", userService.findAll());
         return "users";
     }
-
-    @RequestMapping(value = "/users/{username}/edit", method = RequestMethod.GET)
-    public String edit(@PathVariable String username, ModelMap modelMap) {
-        modelMap.addAttribute("user", userService.findByUsername(username));
-        return "editUser";
-    }
-
-    @RequestMapping(value = "/users/{username}/delete", method = RequestMethod.POST)
-    public String deleteUserByUsername(@PathVariable String username) {
-        userService.deleteUserByUsername(username);
-        return "redirect:/users";
-    }
 }
