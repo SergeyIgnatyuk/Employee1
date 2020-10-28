@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
-    <%--@elvariable id="employee" type="com.model.Employee"--%>
-    <form:form action="/WebApp/employees/addEmployee" method="POST" modelAttribute="employee">
+    <%--@elvariable id="newEmployee" type="com.model.Employee"--%>
+    <form:form action="/WebApp/employees/add" method="POST" modelAttribute="newEmployee">
         <h3>N E W &nbsp; E M P L O Y E E</h3>
         <form:input type="text" name="firstName" placeholder="First Name" path="firstName" autofocus="true"/>
         <form:errors cssClass="has-error" path="firstName"/>

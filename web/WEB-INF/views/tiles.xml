@@ -44,4 +44,9 @@
         <put-attribute name="title" value="add new employee"/>
         <put-attribute name="main" value="/WEB-INF/views/pages/addEmployee.jsp"/>
     </definition>
+    <!--Edit Employee-->
+    <definition name="editEmployee" extends="base-definition">
+        <put-attribute name="title" value="edit employee"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/editEmployee.jsp"/>
+    </definition>
 </tiles-definitions>

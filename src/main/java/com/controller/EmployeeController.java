@@ -33,14 +33,14 @@ public class EmployeeController {
         return "employee";
     }
 
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addNewEmployee(ModelMap modelMap) {
-        modelMap.addAttribute("employee", new Employee());
+        modelMap.addAttribute("newEmployee", new Employee());
         return "addEmployee";
     }
 
-    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-    public String addNewEmployee(@ModelAttribute("employee") Employee employee, BindingResult result) {
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String addNewEmployee(@ModelAttribute("newEmployee") Employee employee, BindingResult result) {
         validator.validate(employee, result);
         if (result.hasErrors()) {
             return "addEmployee";
@@ -49,13 +49,13 @@ public class EmployeeController {
         return "redirect:/employees";
     }
 
-    @RequestMapping(value = "/{id}/editEmployee", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String updateEmployeeById(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("employee", employeeService.findEmployeeById(id));
         return "editEmployee";
     }
 
-    @RequestMapping(value = "/{id}/editEmployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.POST)
     public String updateEmployeeById(@PathVariable Long id, @RequestParam int departmentId, @RequestParam String jobTitle, ModelMap modelMap) {
         employeeService.updateEmployeeById(id, departmentId, jobTitle);
         return "redirect:/employees/{id}";

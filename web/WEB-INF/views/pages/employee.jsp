@@ -8,7 +8,7 @@
         <th>I D</th>
         <th>F i r s t &nbsp; N a m e</th>
         <th>L a s t &nbsp; N a m e</th>
-        <th>D e p a r t m n t &nbsp; I D</th>
+        <th>D e p a r t m e n t &nbsp; I D</th>
         <th>J o b &nbsp; T i t l e</th>
         <th>G e n d e r</th>
         <th>D a t e &nbsp; o f &nbsp; B i r t h</th>
