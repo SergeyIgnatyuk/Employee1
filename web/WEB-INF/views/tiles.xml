@@ -29,4 +29,19 @@
         <put-attribute name="title" value="users"/>
         <put-attribute name="main" value="/WEB-INF/views/pages/users.jsp"/>
     </definition>
+    <!--Employees-->
+    <definition name="employees" extends="base-definition">
+        <put-attribute name="title" value="employees"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/employees.jsp"/>
+    </definition>
+    <!--Employee-->
+    <definition name="employee" extends="base-definition">
+        <put-attribute name="title" value="employee"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/employee.jsp"/>
+    </definition>
+    <!--Add Employee-->
+    <definition name="addEmployee" extends="base-definition">
+        <put-attribute name="title" value="add new employee"/>
+        <put-attribute name="main" value="/WEB-INF/views/pages/addEmployee.jsp"/>
+    </definition>
 </tiles-definitions>

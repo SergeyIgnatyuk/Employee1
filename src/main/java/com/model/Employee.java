@@ -7,7 +7,7 @@ public class Employee {
     private Long id;
     private String firstName;
     private String lastName;
-    private String departmentId;
+    private int departmentId;
     private String jobTitle;
     private String gender;
     private Date dateOfBirth;
@@ -39,11 +39,11 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getDepartmentId() {
+    public int getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(String departmentId) {
+    public void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;
     }
 

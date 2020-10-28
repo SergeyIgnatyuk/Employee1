@@ -5,6 +5,7 @@
 <head>
     <title><tiles:getAsString name="title"/></title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/addEmployee.css">
 </head>
 <body>
     <header class="header">

@@ -37,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional
-    public Employee updateEmployeeById(Long id, String departmentId, String jobTitle) {
+    public Employee updateEmployeeById(Long id, int departmentId, String jobTitle) {
         return employeeDao.updateEmployeeById(id, departmentId, jobTitle);
     }
 

@@ -20,6 +20,7 @@
         <property name="basenames">
             <list>
                 <value>classpath:/validation/valid-user</value>
+                <value>classpath:/validation/valid-employee</value>
             </list>
         </property>
     </bean>

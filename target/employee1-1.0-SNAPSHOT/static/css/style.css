@@ -78,6 +78,10 @@ td, th {
     color: #0f1e7c;
 }
 
+caption {
+    color: #41835d;
+}
+
 .edit, .delete {
     cursor: pointer;
 }

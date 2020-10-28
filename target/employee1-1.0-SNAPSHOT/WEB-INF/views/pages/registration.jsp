@@ -14,13 +14,14 @@
 </head>
 <body>
 <div class="container">
+    <%--@elvariable id="userForm" type="com.model.User"--%>
     <form:form action="/WebApp/registration" method="POST" modelAttribute="userForm">
         <h2>Create your account</h2>
         <form:input type="text" name="username" placeholder="Username" path="username" autofocus="true"/>
         <form:errors cssClass="has-error" path="username"/>
         <form:input type="password" name="password" placeholder="Password" path="password"/>
         <form:errors cssClass="has-error" path="password"/>
-        <form:input type="password" name="confirmPassword" placeholder="Confirm your password" path=""/>
+        <form:input type="password" name="confirmPassword" placeholder="Confirm your password" path="confirmPassword"/>
         <form:errors cssClass="has-error" path="confirmPassword"/>
         <input type="submit" value="S U B M I T">
     </form:form>

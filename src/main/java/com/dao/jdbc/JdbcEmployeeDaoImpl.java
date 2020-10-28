@@ -27,7 +27,7 @@ public class JdbcEmployeeDaoImpl implements EmployeeDao {
             employee.setId(rs.getLong("id"));
             employee.setFirstName(rs.getString("first_name"));
             employee.setLastName(rs.getString("last_name"));
-            employee.setDepartmentId(rs.getString("department_id"));
+            employee.setDepartmentId(rs.getInt("department_id"));
             employee.setJobTitle(rs.getString("job_title"));
             employee.setGender(rs.getString("gender"));
             employee.setDateOfBirth(rs.getDate("date_of_birth"));
@@ -67,7 +67,7 @@ public class JdbcEmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public Employee updateEmployeeById(Long id, String departmentId, String jobTitle) {
+    public Employee updateEmployeeById(Long id, int departmentId, String jobTitle) {
         String sql = "UPDATE employees " +
                 "SET department_id = :departmentId, job_title = :jobTitle " +
                 "WHERE id = :id";

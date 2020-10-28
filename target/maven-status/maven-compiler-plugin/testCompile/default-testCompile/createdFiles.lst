@@ -1,6 +1,10 @@
+com\dao\jdbc\JdbcEmployeeDaoImplTest$JdbcEmployeeDaoImplTestConfig.class
 com\dao\jdbc\JdbcUserDaoImplTest$JdbcUserDaoImplTestConfig.class
 com\dao\jdbc\JdbcUserDaoImplTest.class
+com\service\EmployeeServiceImplTest.class
+com\service\EmployeeServiceImplTest$EmployeeServiceImplTestConfig.class
 com\dao\jdbc\JdbcRoleDaoImplTest$JdbcRoleDaoImplTestConfig.class
 com\dao\jdbc\JdbcRoleDaoImplTest.class
+com\dao\jdbc\JdbcEmployeeDaoImplTest.class
 com\service\UserServiceImplTest.class
 com\service\UserServiceImplTest$UserServiceImplTestConfig.class

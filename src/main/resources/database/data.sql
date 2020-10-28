@@ -29,7 +29,7 @@ CREATE TABLE user_roles
 -- Table: employees
 CREATE TABLE employees
 (
-    user_id  INT GENERATED ALWAYS AS identity PRIMARY KEY,
+    id  INT GENERATED ALWAYS AS identity PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     department_id INT NOT NULL,
