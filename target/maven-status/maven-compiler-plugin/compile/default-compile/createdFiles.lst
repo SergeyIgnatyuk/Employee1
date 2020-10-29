@@ -7,7 +7,6 @@ com\dao\jdbc\JdbcUserDaoImpl$2.class
 com\util\UserValidator.class
 com\service\UserService.class
 com\util\EmployeeValidator.class
-com\controller\WelcomeController.class
 com\service\UserServiceImpl.class
 com\dao\jdbc\JdbcRoleDaoImpl.class
 com\dao\jdbc\JdbcEmployeeDaoImpl.class
@@ -19,5 +18,6 @@ com\model\User.class
 com\service\UserDetailsServiceImpl.class
 com\dao\jdbc\JdbcUserDaoImpl.class
 com\service\EmployeeService.class
+com\controller\HomeController.class
 com\controller\EmployeeController.class
 com\dao\jdbc\JdbcUserDaoImpl$1.class

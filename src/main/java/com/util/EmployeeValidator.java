@@ -8,7 +8,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.util.Date;
-import java.util.List;
 
 @Component
 public class EmployeeValidator implements Validator {
@@ -27,17 +26,6 @@ public class EmployeeValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Employee employee = (Employee) o;
-
-        if (employee.getId() == null) {
-            errors.rejectValue("id", "empty");
-        } else {
-            List<Employee> employeeList = employeeService.findAllEmployees();
-            for (Employee e : employeeList) {
-                if (e.getId().equals(employee.getId())) {
-                    errors.rejectValue("id", "id");
-                }
-            }
-        }
 
         String firstName = employee.getFirstName();
         if (firstName.isEmpty()) {

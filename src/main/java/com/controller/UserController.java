@@ -3,14 +3,14 @@ package com.controller;
 import com.model.User;
 import com.service.SecurityService;
 import com.service.UserService;
-import com.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,7 +21,8 @@ public class UserController {
     @Autowired
     private SecurityService securityService;
     @Autowired
-    private UserValidator userValidator;
+    @Qualifier("userValidator")
+    private Validator validator;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -44,7 +45,7 @@ public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult result) {
-        userValidator.validate(userForm, result);
+        validator.validate(userForm, result);
         if (result.hasErrors()) {
             return "registration";
         }

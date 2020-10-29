@@ -2,21 +2,22 @@ package com.controller;
 
 import com.model.Employee;
 import com.service.EmployeeService;
-import com.util.EmployeeValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value = "/employees")
 public class EmployeeController {
-    private final EmployeeService employeeService;
-    private final EmployeeValidator validator;
+    private EmployeeService employeeService;
+    private Validator validator;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService, EmployeeValidator validator) {
+    public EmployeeController(EmployeeService employeeService, @Qualifier("employeeValidator") Validator validator) {
         this.employeeService = employeeService;
         this.validator = validator;
     }
@@ -56,7 +57,11 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.POST)
-    public String updateEmployeeById(@PathVariable Long id, @RequestParam int departmentId, @RequestParam String jobTitle, ModelMap modelMap) {
+    public String updateEmployeeById(@PathVariable Long id, @RequestParam int departmentId, @RequestParam String jobTitle, @ModelAttribute("employee") Employee employee, BindingResult result) {
+        validator.validate(employee, result);
+        if (result.hasFieldErrors("departmentId") || result.hasFieldErrors("jobTitle")) {
+            return "editEmployee";
+        }
         employeeService.updateEmployeeById(id, departmentId, jobTitle);
         return "redirect:/employees/{id}";
     }

@@ -1,10 +1,14 @@
 com\dao\jdbc\JdbcEmployeeDaoImplTest$JdbcEmployeeDaoImplTestConfig.class
 com\dao\jdbc\JdbcUserDaoImplTest$JdbcUserDaoImplTestConfig.class
-com\dao\jdbc\JdbcUserDaoImplTest.class
 com\service\EmployeeServiceImplTest.class
-com\service\EmployeeServiceImplTest$EmployeeServiceImplTestConfig.class
-com\dao\jdbc\JdbcRoleDaoImplTest$JdbcRoleDaoImplTestConfig.class
 com\dao\jdbc\JdbcRoleDaoImplTest.class
 com\dao\jdbc\JdbcEmployeeDaoImplTest.class
+com\controller\HomeControllerTest$HomeControllerTestConfig.class
 com\service\UserServiceImplTest.class
+com\dao\jdbc\JdbcUserDaoImplTest.class
+com\service\EmployeeServiceImplTest$EmployeeServiceImplTestConfig.class
+com\controller\EmployeeControllerTest$EmployeeControllerTestConfig.class
+com\dao\jdbc\JdbcRoleDaoImplTest$JdbcRoleDaoImplTestConfig.class
+com\controller\EmployeeControllerTest.class
+com\controller\HomeControllerTest.class
 com\service\UserServiceImplTest$UserServiceImplTestConfig.class
