@@ -78,7 +78,29 @@ td, th {
     color: #0f1e7c;
 }
 
+tr.addNew td {
+    border: none;
+}
+
+table td a {
+    text-decoration: none;
+    color: #0f1e7c;
+    cursor: pointer;
+}
+
+table td a:hover {
+    color: #41835d;
+}
+
 caption {
+    color: #41835d;
+}
+
+.addNew {
+    text-decoration: none;
+}
+
+a.addNew:hover {
     color: #41835d;
 }
 
@@ -100,3 +122,5 @@ footer {
 .logoutForm, .editForm, .deleteForm {
     display: none;
 }
+
+

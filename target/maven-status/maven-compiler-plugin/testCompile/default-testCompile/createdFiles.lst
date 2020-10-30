@@ -1,3 +1,4 @@
+com\controller\UserControllerTest$UserControllerTestConfig.class
 com\dao\jdbc\JdbcEmployeeDaoImplTest$JdbcEmployeeDaoImplTestConfig.class
 com\dao\jdbc\JdbcUserDaoImplTest$JdbcUserDaoImplTestConfig.class
 com\service\EmployeeServiceImplTest.class
@@ -9,6 +10,7 @@ com\dao\jdbc\JdbcUserDaoImplTest.class
 com\service\EmployeeServiceImplTest$EmployeeServiceImplTestConfig.class
 com\controller\EmployeeControllerTest$EmployeeControllerTestConfig.class
 com\dao\jdbc\JdbcRoleDaoImplTest$JdbcRoleDaoImplTestConfig.class
+com\controller\UserControllerTest.class
 com\controller\EmployeeControllerTest.class
 com\controller\HomeControllerTest.class
 com\service\UserServiceImplTest$UserServiceImplTestConfig.class

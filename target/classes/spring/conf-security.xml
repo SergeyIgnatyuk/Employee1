@@ -4,7 +4,10 @@
              xmlns="http://www.springframework.org/schema/security"
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
     <http auto-config="true">
-
+        <intercept-url pattern="/employees/add" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/employees/**/edit" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/employees/**/delete" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
         <form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?error"
                     username-parameter="username" password-parameter="password"/>

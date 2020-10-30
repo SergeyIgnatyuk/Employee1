@@ -17,26 +17,41 @@
     </tr>
     <jsp:useBean id="employees" scope="request" type="java.util.List"/>
     <c:forEach items="${employees}" var="employee">
+        <c:set var="id"><c:out value="${employee.id}"/></c:set>
+        <form:form id="${id}deleteForm" cssClass="deleteForm" action="/WebApp/employees/${id}/delete" method="POST"
+                   modelAttribute="employee"/>
         <tr>
-            <td><c:out value="${employee.id}"/></td>
+            <td>
+                <a href="/WebApp/employees/${id}">${id}</a>
+            </td>
             <td><c:out value="${employee.firstName}"/></td>
             <td><c:out value="${employee.lastName}"/></td>
             <td><c:out value="${employee.departmentId}"/></td>
             <td><c:out value="${employee.jobTitle}"/></td>
             <td><c:out value="${employee.gender}"/></td>
             <td><c:out value="${employee.dateOfBirth}"/></td>
-            <td>
-                <form:form id="editForm" action="/WebApp/employees/${employee.id}/edit" method="GET"
-                           modelAttribute="employee"/>
-                <form:form id="deleteForm" action="/WebApp/employees/${employee.id}/delete" method="POST"
-                           modelAttribute="employee"/>
-                <p>
-                    <security:authorize access="hasRole('ROLE_ADMIN')">
-                        <a class="edit" onclick="document.forms['editForm'].submit()">edit</a> | <a class="delete"
-                                                                                                    onclick="document.forms['deleteForm'].submit()">delete</a>
-                    </security:authorize>
-                </p>
-            </td>
+            <security:authorize access="hasRole('ROLE_ADMIN')">
+                <td>
+                    <p>
+                        <a class="edit" href="/WebApp/employees/${id}/edit">edit</a> | <a class="delete"
+                                                                                                    onclick="document.forms['${id}deleteForm'].submit()">delete</a>
+                    </p>
+                </td>
+            </security:authorize>
         </tr>
     </c:forEach>
+    <security:authorize access="hasRole('ROLE_ADMIN')">
+        <tr class="addNew">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="-8">
+                <a class="addNew" href="/WebApp/employees/add">Add new</a>
+            </td>
+        </tr>
+    </security:authorize>
 </table>
