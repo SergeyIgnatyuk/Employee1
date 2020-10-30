@@ -16,13 +16,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
-    @Autowired
     private UserService userService;
-    @Autowired
     private SecurityService securityService;
-    @Autowired
-    @Qualifier("userValidator")
     private Validator validator;
+
+    @Autowired
+    public UserController(UserService userService, SecurityService securityService, @Qualifier("userValidator") Validator validator) {
+        this.userService = userService;
+        this.securityService = securityService;
+        this.validator = validator;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
