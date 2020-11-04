@@ -21,6 +21,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 
+/**
+ * Integrations tests of {@link JdbcRoleDaoImpl}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = JdbcRoleDaoImplTest.JdbcRoleDaoImplTestConfig.class)
 @Transactional

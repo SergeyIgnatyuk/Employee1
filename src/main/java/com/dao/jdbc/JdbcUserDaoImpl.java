@@ -1,5 +1,6 @@
 package com.dao.jdbc;
 
+import com.dao.EmployeeDao;
 import com.dao.UserDao;
 import com.model.Role;
 import com.model.User;
@@ -14,6 +15,13 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+
+/**
+ * Implementation of {@link UserDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @Repository
 public class JdbcUserDaoImpl implements UserDao {

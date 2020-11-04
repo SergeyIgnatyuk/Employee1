@@ -3,6 +3,13 @@ package com.model;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Simple JavaBean domain object that represents a Employee.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 public class Employee {
     private Long id;
     private String firstName;

@@ -8,6 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Implementation of {@link EmployeeService} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeDao employeeDao;

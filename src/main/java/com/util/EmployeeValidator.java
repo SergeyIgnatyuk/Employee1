@@ -9,6 +9,14 @@ import org.springframework.validation.Validator;
 
 import java.util.Date;
 
+/**
+ * Validator for {@link com.model.Employee} class,
+ * implements {@link Validator} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Component
 public class EmployeeValidator implements Validator {
     private EmployeeService employeeService;

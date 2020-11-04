@@ -9,6 +9,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Implementation of {@link SecurityService} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Service
 public class SecurityServiceImpl implements SecurityService {
     @Autowired

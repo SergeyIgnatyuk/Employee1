@@ -3,6 +3,13 @@ package com.model;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Simple JavaBean domain object that represents a User.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 public class User {
 
     private Long id;

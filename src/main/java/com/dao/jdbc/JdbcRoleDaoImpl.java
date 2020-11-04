@@ -1,5 +1,6 @@
 package com.dao.jdbc;
 
+import com.dao.EmployeeDao;
 import com.dao.RoleDao;
 import com.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,13 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
+
+/**
+ * Implementation of {@link RoleDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @Repository
 public class JdbcRoleDaoImpl implements RoleDao {

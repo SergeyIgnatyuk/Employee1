@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Controller for {@link com.model.User}'s pages.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Controller
 public class UserController {
     private UserService userService;

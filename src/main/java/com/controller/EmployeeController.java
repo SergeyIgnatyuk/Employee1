@@ -10,6 +10,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller for {@link com.model.Employee}'s pages.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Controller
 @RequestMapping(value = "/employees")
 public class EmployeeController {

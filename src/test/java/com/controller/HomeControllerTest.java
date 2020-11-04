@@ -19,6 +19,13 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * Unit tests of {@link HomeController}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {HomeControllerTest.HomeControllerTestConfig.class})

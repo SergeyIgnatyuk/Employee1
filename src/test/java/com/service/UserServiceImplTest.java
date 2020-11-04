@@ -19,6 +19,13 @@ import java.util.Set;
 
 import static org.mockito.Mockito.*;
 
+/**
+ * Unit tests of {@link UserServiceImpl}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = UserServiceImplTest.UserServiceImplTestConfig.class)
 public class UserServiceImplTest {

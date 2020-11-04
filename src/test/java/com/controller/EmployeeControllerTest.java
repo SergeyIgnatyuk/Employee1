@@ -34,6 +34,13 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
+/**
+ * Unit tests of {@link EmployeeController}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {EmployeeControllerTest.EmployeeControllerTestConfig.class})

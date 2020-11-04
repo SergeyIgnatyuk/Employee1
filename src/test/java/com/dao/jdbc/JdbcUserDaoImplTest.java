@@ -25,6 +25,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Integrations tests of {@link JdbcUserDaoImpl}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JdbcUserDaoImplTest.JdbcUserDaoImplTestConfig.class})

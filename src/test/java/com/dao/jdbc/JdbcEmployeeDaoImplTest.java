@@ -1,5 +1,6 @@
 package com.dao.jdbc;
 
+import com.controller.EmployeeController;
 import com.dao.EmployeeDao;
 import com.model.Employee;
 import org.junit.Assert;
@@ -24,6 +25,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+/**
+ * Integrations tests of {@link JdbcEmployeeDaoImpl}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JdbcEmployeeDaoImplTest.JdbcEmployeeDaoImplTestConfig.class})

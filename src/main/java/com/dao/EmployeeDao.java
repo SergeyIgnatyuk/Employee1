@@ -4,6 +4,13 @@ import com.model.Employee;
 
 import java.util.List;
 
+/**
+ * DAO interface for {@link com.model.Employee}
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 public interface EmployeeDao {
     List<Employee> findAllEmployees();
     Employee findEmployeeById(Long id);

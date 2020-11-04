@@ -3,6 +3,13 @@ package com.model;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Simple JavaBean object that represents role of {@link com.model.User}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 public class Role {
     private Long id;
     private String name;

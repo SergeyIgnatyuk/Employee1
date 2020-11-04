@@ -2,6 +2,7 @@ package com.dao.jdbc;
 
 import com.dao.EmployeeDao;
 import com.model.Employee;
+import com.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -11,6 +12,13 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * Implementation of {@link EmployeeDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @Repository
 public class JdbcEmployeeDaoImpl implements EmployeeDao {

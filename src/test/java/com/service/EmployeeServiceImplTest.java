@@ -1,6 +1,7 @@
 package com.service;
 
 import com.dao.EmployeeDao;
+import com.dao.jdbc.JdbcRoleDaoImpl;
 import com.model.Employee;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+/**
+ * Unit tests of {@link EmployeeServiceImpl}.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {EmployeeServiceImplTest.EmployeeServiceImplTestConfig.class})
