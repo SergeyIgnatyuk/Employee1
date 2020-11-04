@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Implementation of {@link EmployeeService} interface.
@@ -27,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     @Transactional(readOnly = true)
     public List<Employee> findAllEmployees() {
-        return employeeDao.findAllEmployees();
+        return employeeDao.findAllEmployees().stream().sorted((o1, o2) -> (int) (o1.getId() - o2.getId())).collect(Collectors.toList());
     }
 
     @Override
