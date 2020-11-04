@@ -15,7 +15,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.mockito.Mockito.*;
 
@@ -97,7 +100,25 @@ public class UserServiceImplTest {
 
     @Test
     public void findAllTest() {
-        userService.findAll();
+        User user1 = new User();
+        user1.setId(1L);
+
+        User user2 = new User();
+        user2.setId(2L);
+
+        User user3 = new User();
+        user3.setId(3L);
+
+        List<User> users = Stream.of(user2, user1, user3).collect(Collectors.toList());
+
+        when(userDao.findAll()).thenReturn(users);
+
+        users = userService.findAll();
+
+        Assert.assertEquals(1, users.get(0).getId().intValue());
+        Assert.assertEquals(2, users.get(1).getId().intValue());
+        Assert.assertEquals(3, users.get(2).getId().intValue());
+
         verify(userDao, times(1)).findAll();
     }
 }
