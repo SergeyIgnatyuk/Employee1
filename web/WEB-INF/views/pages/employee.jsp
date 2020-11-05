@@ -25,18 +25,18 @@
         <td><c:out value="${employee.jobTitle}"/></td>
         <td><c:out value="${employee.gender}"/></td>
         <td><c:out value="${employee.dateOfBirth}"/></td>
-        <td>
-            <form:form id="editForm" action="/WebApp/employees/${employee.id}/edit" method="GET"
-                       modelAttribute="employee"/>
-            <form:form id="deleteForm" action="/WebApp/employees/${employee.id}/delete" method="POST"
-                       modelAttribute="employee"/>
-            <p>
-                <security:authorize access="hasRole('ROLE_ADMIN')">
+        <security:authorize access="hasRole('ROLE_ADMIN')">
+            <td>
+                <form:form id="editForm" action="/WebApp/employees/${employee.id}/edit" method="GET"
+                           modelAttribute="employee"/>
+                <form:form id="deleteForm" action="/WebApp/employees/${employee.id}/delete" method="POST"
+                           modelAttribute="employee"/>
+                <p>
                     <a class="edit" onclick="document.forms['editForm'].submit()">edit</a> | <a class="delete"
                                                                                                 onclick="document.forms['deleteForm'].submit()">delete</a>
-                </security:authorize>
-            </p>
-        </td>
+                </p>
+            </td>
+        </security:authorize>
     </tr>
 
 </table>
