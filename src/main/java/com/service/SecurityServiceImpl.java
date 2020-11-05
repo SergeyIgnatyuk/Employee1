@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class SecurityServiceImpl implements SecurityService {
-    private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SecurityServiceImpl.class);
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -48,7 +48,7 @@ public class SecurityServiceImpl implements SecurityService {
 
         if (authenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            logger.debug("Successfully {} auto logged in", username);
+            LOGGER.debug("Successfully {} auto logged in", username);
         }
     }
 }
