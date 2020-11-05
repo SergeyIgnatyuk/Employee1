@@ -21,7 +21,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.3.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.26" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.16" />
@@ -73,6 +72,9 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.3.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:5.3.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.3.4.RELEASE" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.26" />
         </element>
       </element>
       <element id="directory" name="META-INF">
