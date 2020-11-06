@@ -9,5 +9,9 @@
         </id>
         <property name="username" column="username" type="java.lang.String"/>
         <property name="password" column="password" type="java.lang.String"/>
+        <set name="roles" cascade="save-update" table="user_roles">
+            <key column="user_id"/>
+            <many-to-many column="role_id"/>
+        </set>
     </class>
 </hibernate-mapping>
