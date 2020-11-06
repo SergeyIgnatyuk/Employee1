@@ -39,6 +39,6 @@
 
     <context-param>
         <param-name>spring.profiles.active</param-name>
-        <param-value>jdbc</param-value>
+        <param-value>hibernate</param-value>
     </context-param>
 </web-app>

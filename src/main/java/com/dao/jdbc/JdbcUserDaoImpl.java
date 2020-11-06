@@ -33,43 +33,37 @@ public class JdbcUserDaoImpl implements UserDao {
     }
 
     private ResultSetExtractor<User> resultSetExtractor() {
-        return new ResultSetExtractor<User>() {
-            @Override
-            public User extractData(ResultSet rs) throws SQLException, DataAccessException {
-                User user = null;
-                while (rs.next()) {
-                    user = new User();
-                    user.setId(rs.getLong("user_id"));
-                    user.setUsername(rs.getString("username"));
-                    user.setPassword(rs.getString("password"));
-                    user.setRoles(new HashSet<>());
+        return rs -> {
+            User user = null;
+            while (rs.next()) {
+                user = new User();
+                user.setId(rs.getLong("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setRoles(new HashSet<>());
 
-                    Role role = new Role();
-                    role.setId(rs.getLong("role_id"));
-                    role.setName(rs.getString("name"));
-                    user.getRoles().add(role);
-                }
-                return user;
+                Role role = new Role();
+                role.setId(rs.getLong("role_id"));
+                role.setName(rs.getString("name"));
+                user.getRoles().add(role);
             }
+            return user;
         };
     }
 
     private RowMapper<User> rowMapper() {
-        return new RowMapper<User>() {
-            @Override
-            public User mapRow(ResultSet rs, int i) throws SQLException {
-                User user = new User();
-                user.setId(rs.getLong("user_id"));
-                user.setUsername(rs.getString("username"));
-                user.setPassword(rs.getString("password"));
-                Set<Role> roles = new HashSet<>();
-                Role role = new Role();
-                role.setId(rs.getLong("role_id"));
-                role.setName(rs.getString("name"));
-                roles.add(role);
-                user.setRoles(roles);
-                return user;
-            }
+        return (rs, i) -> {
+            User user = new User();
+            user.setId(rs.getLong("user_id"));
+            user.setUsername(rs.getString("username"));
+            user.setPassword(rs.getString("password"));
+            Set<Role> roles = new HashSet<>();
+            Role role = new Role();
+            role.setId(rs.getLong("role_id"));
+            role.setName(rs.getString("name"));
+            roles.add(role);
+            user.setRoles(roles);
+            return user;
         };
     }
 

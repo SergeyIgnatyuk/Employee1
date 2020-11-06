@@ -7,6 +7,10 @@
         <id name="id" column="role_id" type="java.lang.Long">
             <generator class="identity"/>
         </id>
+        <!--set name="users" table="user_roles" cascade="save-update">
+            <key column="role_id"/>
+            <many-to-many column="user_id" class="com.model.User"/>
+        </set-->
         <property name="name" column="name" type="java.lang.String"/>
     </class>
 </hibernate-mapping>

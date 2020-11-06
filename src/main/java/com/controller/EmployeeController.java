@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping(value = "/employees")
 public class EmployeeController {
-    private EmployeeService employeeService;
-    private Validator validator;
+    private final EmployeeService employeeService;
+    private final Validator validator;
 
     @Autowired
     public EmployeeController(EmployeeService employeeService, @Qualifier("employeeValidator") Validator validator) {

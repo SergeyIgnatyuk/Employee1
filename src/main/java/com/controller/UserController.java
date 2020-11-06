@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserController {
-    private UserService userService;
-    private SecurityService securityService;
-    private Validator validator;
+    private final UserService userService;
+    private final SecurityService securityService;
+    private final Validator validator;
 
     @Autowired
     public UserController(UserService userService, SecurityService securityService, @Qualifier("userValidator") Validator validator) {
