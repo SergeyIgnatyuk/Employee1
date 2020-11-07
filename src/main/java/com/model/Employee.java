@@ -1,5 +1,6 @@
 package com.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -11,13 +12,29 @@ import java.util.Objects;
  * @version 1.0
  */
 
+@Entity
+@Table(name = "employees")
 public class Employee implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "department_id")
     private int departmentId;
+
+    @Column(name = "job_title")
     private String jobTitle;
+
+    @Column(name = "gender")
     private String gender;
+
+    @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
     public Employee() {

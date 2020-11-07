@@ -1,5 +1,6 @@
 package com.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
@@ -12,9 +13,18 @@ import java.util.Set;
  * @version 1.0
  */
 
+@Entity
+@Table(name = "roles")
 public class Role implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "role_id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users = new HashSet<>();
 
     public Role() {
