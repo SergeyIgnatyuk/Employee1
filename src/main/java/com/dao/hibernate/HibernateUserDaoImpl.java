@@ -10,6 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Implementation of {@link UserDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Repository
 public class HibernateUserDaoImpl implements UserDao {
     private final SessionFactory sessionFactory;

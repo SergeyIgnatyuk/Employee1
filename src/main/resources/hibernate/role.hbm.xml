@@ -7,10 +7,14 @@
         <id name="id" column="role_id" type="java.lang.Long">
             <generator class="identity"/>
         </id>
-        <!--set name="users" table="user_roles" cascade="save-update">
-            <key column="role_id"/>
-            <many-to-many column="user_id" class="com.model.User"/>
-        </set-->
-        <property name="name" column="name" type="java.lang.String"/>
+        <property name="name" column="name" type="java.lang.String" not-null="true" unique="true"/>
+        <set name="users" table="user_roles" inverse="false" lazy="true" fetch="select" cascade="save-update">
+            <key>
+                <column name="role_id" not-null="true"/>
+            </key>
+            <many-to-many entity-name="com.model.User">
+                <column name="user_id" not-null="true"/>
+            </many-to-many>
+        </set>
     </class>
 </hibernate-mapping>

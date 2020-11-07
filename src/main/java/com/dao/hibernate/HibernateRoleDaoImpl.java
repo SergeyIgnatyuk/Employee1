@@ -7,6 +7,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Implementation of {@link RoleDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Repository
 public class HibernateRoleDaoImpl implements RoleDao {
     private final SessionFactory sessionFactory;

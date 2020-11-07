@@ -7,11 +7,11 @@
         <id name="id" column="id" type="java.lang.Long">
             <generator class="identity"/>
         </id>
-        <property name="firstName" column="first_name" type="java.lang.String"/>
-        <property name="lastName" column="last_name" type="java.lang.String"/>
-        <property name="departmentId" column="department_id" type="int"/>
-        <property name="jobTitle" column="job_title" type="java.lang.String"/>
-        <property name="gender" column="gender" type="java.lang.String"/>
-        <property name="dateOfBirth" column="date_of_birth" type="java.util.Date"/>
+        <property name="firstName" column="first_name" type="java.lang.String" not-null="true"/>
+        <property name="lastName" column="last_name" type="java.lang.String" not-null="true"/>
+        <property name="departmentId" column="department_id" type="int" not-null="true"/>
+        <property name="jobTitle" column="job_title" type="java.lang.String" not-null="true"/>
+        <property name="gender" column="gender" type="java.lang.String" not-null="true"/>
+        <property name="dateOfBirth" column="date_of_birth" type="java.util.Date" not-null="true"/>
     </class>
 </hibernate-mapping>

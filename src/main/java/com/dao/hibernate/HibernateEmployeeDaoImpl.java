@@ -10,6 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Implementation of {@link EmployeeDao} interface.
+ *
+ * @author Sergey Ignatyuk
+ * @version 1.0
+ */
+
 @Repository
 public class HibernateEmployeeDaoImpl implements EmployeeDao {
 

@@ -1,5 +1,7 @@
 package com.model;
 
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -10,7 +12,7 @@ import java.util.Set;
  * @version 1.0
  */
 
-public class User {
+public class User implements Serializable {
 
     private Long id;
 
@@ -18,9 +20,9 @@ public class User {
 
     private String password;
 
-    private String confirmPassword;
+    transient private String confirmPassword;
 
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }

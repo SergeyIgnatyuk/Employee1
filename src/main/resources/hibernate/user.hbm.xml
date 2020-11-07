@@ -7,11 +7,15 @@
         <id name="id" column="user_id" type="java.lang.Long">
             <generator class="identity"/>
         </id>
-        <set name="roles" cascade="save-update" table="user_roles">
-            <key column="user_id"/>
-            <many-to-many column="role_id" class="com.model.Role"/>
+        <property name="username" column="username" type="java.lang.String" not-null="true" unique="true"/>
+        <property name="password" column="password" type="java.lang.String" not-null="true"/>
+        <set name="roles" table="user_roles" inverse="true" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="user_id" not-null="true"/>
+            </key>
+            <many-to-many entity-name="com.model.Role">
+                <column name="role_id" not-null="true"/>
+            </many-to-many>
         </set>
-        <property name="username" column="username" type="java.lang.String"/>
-        <property name="password" column="password" type="java.lang.String"/>
     </class>
 </hibernate-mapping>

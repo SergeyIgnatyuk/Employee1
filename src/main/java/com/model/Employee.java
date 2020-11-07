@@ -1,5 +1,6 @@
 package com.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ import java.util.Objects;
  * @version 1.0
  */
 
-public class Employee {
+public class Employee implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
