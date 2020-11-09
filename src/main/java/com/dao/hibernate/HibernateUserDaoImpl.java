@@ -32,16 +32,17 @@ public class HibernateUserDaoImpl implements UserDao {
 
     @Override
     public List<User> findAll() {
-        Query query = currentSession().createQuery("From User u");
+        Query query = currentSession().createQuery("From User");
         return query.getResultList();
     }
 
     @Override
     public User findByUsername(String username) {
-        Query query = currentSession().createQuery("FROM User u WHERE u.username = :username");
+        Query query = currentSession().createQuery("FROM User WHERE username = :username");
         query.setParameter("username", username);
-        if (query.list().size() > 0) {
-            return (User) query.list().get(0);
+        List<User> users = query.list();
+        if (users.size() > 0) {
+            return (User) users.get(0);
         }
         return null;
     }

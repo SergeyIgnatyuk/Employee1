@@ -41,6 +41,29 @@
         <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
             <property name="sessionFactory" ref="sessionFactory"/>
         </bean>
+    </beans>
+
+    <beans profile="hibernate, jpa">
         <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    </beans>
+
+    <beans profile="jpa">
+        <context:component-scan base-package="com.dao.jpa"/>
+        <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+            <property name="dataSource" ref="dataSource"/>
+            <property name="packagesToScan" value="com.model"/>
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                    <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
+                    <property name="database" value="POSTGRESQL"/>
+                    <property name="showSql" value="true"/>
+                    <property name="generateDdl" value="true"/>
+                </bean>
+            </property>
+        </bean>
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+            <property name="entityManagerFactory" ref="emf"/>
+        </bean>
+        <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
     </beans>
 </beans>

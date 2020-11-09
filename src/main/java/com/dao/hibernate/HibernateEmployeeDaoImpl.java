@@ -33,7 +33,7 @@ public class HibernateEmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public List<Employee> findAllEmployees() {
-        Query query = currentSession().createQuery("FROM Employee e");
+        Query query = currentSession().createQuery("FROM Employee");
         return query.getResultList();
     }
 
