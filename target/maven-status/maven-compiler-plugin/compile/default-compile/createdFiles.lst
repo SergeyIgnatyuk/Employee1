@@ -1,10 +1,12 @@
 com\service\SecurityServiceImpl.class
 com\dao\EmployeeDao.class
+com\dao\jpa\JpaRoleDaoImpl.class
 com\model\Employee.class
 com\model\Role.class
 com\dao\hibernate\HibernateRoleDaoImpl.class
 com\controller\UserController.class
 com\dao\hibernate\HibernateUserDaoImpl.class
+com\dao\jpa\JpaEmployeeDaoImpl.class
 com\util\UserValidator.class
 com\service\UserService.class
 com\util\EmployeeValidator.class
@@ -22,3 +24,4 @@ com\dao\jdbc\JdbcUserDaoImpl.class
 com\service\EmployeeService.class
 com\controller\HomeController.class
 com\controller\EmployeeController.class
+com\dao\jpa\JpaUserDaoImpl.class

@@ -30,7 +30,7 @@ public class User implements Serializable {
     @Transient
     transient private String confirmPassword;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
@@ -92,7 +92,7 @@ public class User implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getUsername(), getPassword(), getConfirmPassword(), getRoles());
+        return Objects.hash(getId(), getUsername(), getPassword(), getConfirmPassword());
     }
 
     @Override

@@ -24,7 +24,7 @@ public class Role implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users = new HashSet<>();
 
     public Role() {
@@ -64,9 +64,9 @@ public class Role implements Serializable {
                 Objects.equals(getUsers(), role.getUsers());
     }
 
-    @Override
+   @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getUsers());
+        return Objects.hash(getId(), getName());
     }
 
     @Override
