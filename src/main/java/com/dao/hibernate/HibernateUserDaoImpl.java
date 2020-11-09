@@ -40,7 +40,10 @@ public class HibernateUserDaoImpl implements UserDao {
     public User findByUsername(String username) {
         Query query = currentSession().createQuery("FROM User u WHERE u.username = :username");
         query.setParameter("username", username);
-        return (User) query.getSingleResult();
+        if (query.list().size() > 0) {
+            return (User) query.list().get(0);
+        }
+        return null;
     }
 
     @Override

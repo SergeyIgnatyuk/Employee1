@@ -30,13 +30,6 @@
                     <value>hibernate/role.hbm.xml</value>
                 </list>
             </property>
-            <!--property name="annotatedClasses">
-                <list>
-                    <value>com.model.Employee</value>
-                    <value>com.model.User</value>
-                    <value>com.model.Role</value>
-                </list>
-            </property-->
             <property name="hibernateProperties">
                 <props>
                     <prop key="dialect">org.hibernate.dialect.PostgreSQL10Dialect</prop>
