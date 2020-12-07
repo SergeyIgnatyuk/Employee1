@@ -9,6 +9,8 @@
         <intercept-url pattern="/employees/**/delete" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
+        <intercept-url pattern="/employees" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
+        <intercept-url pattern="/registration" requires-channel="https"/>
         <form-login login-page="/login" default-target-url="/" authentication-failure-url="/login?error"
                     username-parameter="username" password-parameter="password"/>
         <logout logout-success-url="/login?logout"/>

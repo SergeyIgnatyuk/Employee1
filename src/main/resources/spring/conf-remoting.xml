@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.service"/>
+
+    <!--RMI-->
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="service" value="#{'employeeServiceImpl'}"/>
+        <property name="serviceName" value="EmployeeService"/>
+        <property name="serviceInterface" value="com.service.EmployeeService"/>
+        <property name="registryHost" value="rmi.employee.com"/>
+        <property name="registryPort" value="1099"/>
+    </bean>
+
+    <!--Caucho Hessian-->
+    <bean id="employeeHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+        <property name="service" value="#{'employeeServiceImpl'}"/>
+        <property name="serviceInterface" value="com.service.EmployeeService"/>
+    </bean>
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings" value="/employees.service=employeeHessianService"/>
+    </bean>
+
+    <!--HTTP Invoker-->
+    <bean class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" value="#{'employeeServiceImpl'}"/>
+        <property name="serviceInterface" value="com.service.EmployeeService"/>
+    </bean>
+</beans>
